@@ -6,7 +6,23 @@
 
 	Exercici:
 
-	Crea un document XML anomenat Equips.xml que contingui la informació sobre al menys 4 equips d'una botiga d'informàtica. Sobre cada producte s'han de proporcionar les següents dades: nom, preu, característiques i opcions. El preu s'ha de proporcionar tant en euros com en dolars. Les característiques que s'han d'indicar són: tipus (sobretaula, netbook, portàtil), processador, memòria RAM, targeta gràfica i espai de disc. Una vegada creat el document XML visualitza'l en IE i Firefox. Abans de pujar-lo, valida'l en www.w3c.org
+	Crea un document XML anomenat Equips.xml que contingui la informació sobre al menys 4 equips d'una botiga d'informàtica. 
+	Sobre cada producte s'han de proporcionar les següents dades: 
+		nom
+		preu
+			El preu s'ha de proporcionar tant en euros com en dolars
+		característiques
+			tipus (sobretaula, netbook, portàtil)
+			processador
+			memòria RAM
+			targeta gràfica
+			espai de disc
+		opcions
+
+
+	Una vegada creat el document XML visualitza'l en IE i Firefox. 
+
+	Abans de pujar-lo valida'l en www.w3c.org
 
 -->
 <Equips>
