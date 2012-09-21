@@ -24,7 +24,7 @@
 			</caracteristiques>
 			<opcions>Office 2010 preloaded</opcions>
 	</equip>
-	<equip tipus"Portàtil">
+	<equip tipus="Portàtil">
 			<nom>Fujitsu LIFEBOOK A530</nom>
 			<preus>
 				<preu moneda="USD">$781</preu>
@@ -52,7 +52,7 @@
 			</caracteristiques>
 			<opcions>Webcam</opcions>
 	</equip>
-	<equip tipus"Portàtil">
+	<equip tipus="Portàtil">
 			<nom>Acer Aspire AS5750G-2334G75Mnkk</nom>
 			<preus>
 				<preu moneda="USD">$440</preu>
