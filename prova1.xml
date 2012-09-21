@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<movies> 
+	<movie>
+		<title>Casablanca</title>
+		<any>1960</any>
+		<director>Michael Curtiz</director>
+		<actors>
+			<actor>Humphrey Bogart</actor>	   
+		</actors>
+	</movie>
+	<movie>
+		<title>Troia</title>
+		<any>2004</any>
+		<director>Wolfgang Petersen</director>
+		<actors>
+			<actor>Brad Pitt</actor>
+			<actor>Orlando Bloom</actor>
+			<actor>Eric Bana</actor>
+		</actors>
+	</movie>
+</movies>
+<!--
+	Els comentaris són com en html
+
+	validator.w3.org
+-->
