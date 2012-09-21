@@ -1,5 +1,4 @@
-
-
 # Assignatura: Llenguatges de marques
-# Professora: Cristina Gomez
+
+- Professora: Cristina Gomez
 
