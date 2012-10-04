@@ -1,0 +1,43 @@
+<!-- 
+# Dídac # 2012-10-04 09:57:05
+
+
+Exercici Namespaces
+Mòdul 04 - Llenguatge de marques i sistemes de gestió d’informació (I) 15:30
+ 	
+Crea un document XML anomenat Empleat.xml que contingui la informació sobre un empleat. Defineix dins del root element 3 espais de noms associats a la etiqueta codi. Un espai de noms vindrà referit al codi del treballador, altre al codi del departament on treballa i altre al seu codi postal.
+
+-->
+<?xml version="1.0" encoding="utf-8" ?>
+<Empleats
+	xmlns:treballador="http://www.abc.com/treb/"
+	xmlns:departament="http://www.def.com/dep/"
+	xmlns:postal="http://www.xyz.com/postal/"
+>
+	<empleat>
+		<treballador:codi></treballador:codi>
+		<departament:codi></departament:codi>
+		<postal:codi></postal:codi>
+	</empleat>
+</Empleats>
+
+<!--
+
+¿Qué son els namespaces per defecte? Descriu-los breument i modifica el fitxer xml anterior perquè tingui un. Descriu amb les teves paraules com l'analitzarà el parser.
+
+Son espais de nom, sense prefix.
+
+-->
+<?xml version="1.0" encoding="utf-8" ?>
+<Empleats
+	xmlns="http://xyz.com/empleat"
+	xmlns:treballador="http://www.abc.com/treb/"
+	xmlns:departament="http://www.def.com/dep/"
+	xmlns:postal="http://www.egh.com/postal/"
+>
+	<empleat>
+		<treballador:codi></treballador:codi>
+		<departament:codi></departament:codi>
+		<postal:codi></postal:codi>
+	</empleat>
+</Empleats>
