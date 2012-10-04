@@ -1,0 +1,8 @@
+
+<!--
+Raona la següent pregunta: És necessari guardar l'import total per producte i l'import total de la factura?
+
+Depen, teoricament no, ja que pots mostrar el import total fent els calculs de cada producte, però per comoditat a l'hora de treballar, pot ser millor tenir el total generat, i no haver d'anar fent els càlculs in situ cada cop que vols la informació.
+
+El problema és que si tens molts articles, i cada cop has de fer el càcul pot donar problemes. I millor fer una simple consulta per saber el total que no variès, i sumar-ho
+-->

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+2. Volem estructurar la informació que genera un procés de facturació d'una empresa en un fitxer XML. Per a això hem de tenir en compte els següents aspectes:
+Cada factura té un codi. 
+La factura també necessita la data d'emissió.
+En la factura apareixen les dades del client (dni, nom, adreça, codi postal, població).
+De cada producte que s'ha comprat ha d'aparèixer la quantitat de productes comprats, la denominació i el preu unitari5)
+S'ha de guardar l'IVA de cada producte. 
+Si és necessari, s'indica un descompte a l'import total de la factura.
+	-->
+<facturacio>
+	<factura codi="X">
+		<data>YYYY-mm-dd</data>
+		<descompte></descompte>
+		<preu moneda="euro"></preu>
+		<client>
+			<dni></dni>
+			<nom></nom>
+			<adreça></adreça>
+			<codiPostal></codiPostal>
+			<poblacio></poblacio>
+		</client>
+		<productes>
+			<article codi="N">
+				<denominacio></denominacio>
+				<unitats></unitats>
+				<preunitari></preunitari>
+				<iva></iva>
+			</article>
+		</productes>
+	</factura>
+</facturacio>

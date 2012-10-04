@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+AVIS: Tot i que es tracta d'un document XML, en el codi font s'inclouen tots els exercicis demanats, i els enunciats  en els comentaris
+
+1. Escriu un document XML que emmagatzemi la següent informació sobre la predicció meteorològica de Reus per al dia 30 de setembre de 2012:
+
+Probabilitat de precipitació: 55%
+Estat del cel: Intervals nuvolosos
+Direcció del vent:Sud-oest 
+Velocitat del vent: 10 Km/h
+Temperatura màxima: 21ºC 
+Temperatura mínima: 10ºC 
+Sensació tèrmica màxima: 21ºC 
+Sensació tèrmica mínima: 10ºC 
+Humitat relativa màxima: 90%
+Humitat relativa mínima: 50%
+Índex Ultraviolat màxim: 3
+
+-->
+<meteo>
+	<ciutat>
+		<nom>Reus</nom>
+		<data>2012-09-30</data>
+		<probabilitatprecipitacio>55</probabilitatprecipitacio>
+		<estatcel>Intervals nuvolosos</estatcel>
+		<direcciovent>Sud-oest</direcciovent>
+		<velocitatVent unitats="Km/h">10</velocitatVent>
+		<temperatura graus="C">
+			<maxima>21</maxima>
+			<minima>21</minima>
+		</temperatura>
+		<sensaciotermica graus="C">
+			<maxima>21</maxima>
+			<minima>21</minima>			
+		</sensaciotermica>
+		<humitatrelativa>
+			<maxima>90</maxima>
+			<minima>3</minima>			
+		</humitatrelativa>
+		<indexuv>
+			<maxim>3</maxim>
+		</indexuv>
+	</ciutat>
+</meteo>

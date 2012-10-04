@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- 
+
+3. Es vol guardar en un fitxer XML la informació generada pels prestem de llibres en una biblioteca. Per a això té en compte els següents aspectes:
+De cada llibre guardem diverses dades: codi ISBN, nom, editorial, any de publicació, autor.
+De cada llibre podem tenir un o diversos exemplars. Cada exemplar es diferencia d'un altre per un codi numèric. 
+Es presten els exemplars, i de cada préstec cal indicar l'exemplar del llibre, el soci al que s'ha prestat i la data de préstec.
+Del soci cal guardar DNI, nom i adreça. 
+
+
+-->
+<prestecs>
+	<prestec id="">
+		<dataprestec></dataprestec>
+		<soci codi="">
+			<dni></dni>
+			<nom></nom>
+			<adreça></adreça>
+		</soci>
+		<llibre codi="">
+			<isbn></isbn>
+			<nom></nom>
+			<editorial></editorial>
+			<anypublicacio></anypublicacio>
+			<autor></autor>
+		</llibre>
+	</prestec>
+</prestecs>
