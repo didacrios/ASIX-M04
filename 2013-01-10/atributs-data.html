@@ -1,0 +1,91 @@
+Atributs data-*
+
+A vegades en les nostres pàgines/aplicacions, ens veiem en la necessitat de tenir informació a mà, relativa a un element.
+
+Aquesta l'emmagatzemàvem en alguns dels seus atributs, i mitjançant JavaScript (o jQuery) podíem accedir a ella.
+
+Algú fins i tot s'inventava nous atributs d'un element.
+
+PROBLEMA?
+
+class="missatge" rel="esborrar"
+
+- Cada atribut té la seva funció, i no s'ha de fer ús d'atributs destinats a d'altres úsos.
+- Si ens inventem atributs, no estem escribint HTML vàlid
+
+LA SOLUCIÓ: HTML5
+
+Inventar-se nous atributs no era tan mala idea, per això s'han inventat els atributs data-* 
+
+	data-nom-quevolguem="valor"
+	Podem ficar qualsevol nom, d'un caracter mínim, i sempre en minuscules.
+	El valor pot ser qualsevol cadena, i fins i tot podem tenir-hi informació amb JSON.
+
+
+Exemple:
+
+	<a href="javascript:void(0);" id="it" class="llibre"
+		data-autor="Stephen King"
+		data-pagines="658"
+		data-titol="IT"
+		data-genere="Terror"
+		data-fitxa="{'autor':'Stephen King','naixement':'1968-02-01', 'isbn':'435409504-34', 'data_publicacio': '1980-03-01', ...}"
+	>IT
+	</a>
+
+
+Per accedir a la informació
+
+HTML5 ha arribat per fer facilitar-nos les coses i sempre o fa mitjançant JavaScript:
+
+Per accedir a la informació (Navegadors: Firefox 15+ | Chrome 22+ | Safari 5.1+ | Opera 12.1+ | iOs 5.0+ | Android 3.0+ | BlackBerry 7+ )
+
+<script>
+	var article = document.querySelector('#it');
+	data = article.dataset;
+
+	// data.autor
+	// data.caracters
+	// data.titol ...
+</script>
+
+I que passa amb el IE? No està tot perdut!!!
+
+Mètode Oldschool (CROSS BROWSER, fins i tot IE7.0 !!!!)
+
+<script>
+	var llibre = document.getElementById('it');
+	// article.getAttribute('data-autor');
+	// article.getAttribute('data-caracters');
+	// article.getAttribute('data-titol'); ...
+</script>
+
+
+També podem modificar aquesta informació:
+
+<script>
+	// html5
+	data.autor = 'Nou valor'; // o data['autor']
+	// oldschool
+	article.setAttribute('data-autor', 'Nou valor');
+</script>
+
+
+PROS:
+
+No afecta a l'usuari final, la pàgina/aplicació no mostra aquesta informació
+Podem processar facilment la informació
+Estem escribint codi html més amigable i el més important, vàlid
+
+
+
+<img src="http://i.imgur.com/cjb01.jpg">
+<img src="http://i.imgur.com/wPFAV.jpg">
+<img src="http://i.imgur.com/L4xmj.jpg">
+
+
+http://www.w3.org/TR/2011/WD-html5-20110525/elements.html#custom-data-attribute
+http://html5doctor.com/html5-custom-data-attributes/
+http://caniuse.com/dataset
+
+

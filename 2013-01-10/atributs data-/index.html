@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Atributs data-*</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+        <div id="html5" style="position:absolute; bottom: 0; margin: 10px">
+            <a href="http://www.w3.org/html/logo/">
+                <img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-graphics-multimedia-semantics.png" width="229" height="64" alt="HTML5 Powered with CSS3 / Styling, Graphics, 3D &amp; Effects, Multimedia, and Semantics" title="HTML5 Powered with CSS3 / Styling, Graphics, 3D &amp; Effects, Multimedia, and Semantics">
+            </a>
+        </div>
+
+		<div class="reveal">
+
+            <div class="slides">
+
+                <section id="introduccio">
+                    <h3>
+                        <br>
+                    </h3>
+
+                    <h1>atributs data-*&nbsp;</h1>
+                    <p><br></p>
+                    <p style="text-align:left;">
+                        <small><b>Autor:</b> Dídac Rios</small>
+                    </p>
+                    <p style="text-align:left;" class="fragment">
+                        <small>Si voleu anar jugant amb el codi que anirà sortint: <a href="http://jsfiddle.net/cadid/zJp9n/" target="_blank">http://jsfiddle.net/cadid/zJp9n/</a> 
+                        <img src="img/navegadors.png" style="margin:0; border: none; padding:0; background: transparent; box-shadow:none;"></small>
+                    </p>
+                </section>
+
+                <section id="situacio">
+
+                    <section>
+                            <h6>
+                                <br>
+                                <br>
+                            </h6>
+                            <h1>SITUACIÓ <small>(html4)</small></h1>
+                            <p>
+                            <br>A vegades en les nostres pàgines/aplicacions web, ens veiem amb la necessitat de tenir informació relativa a qualsevol element.</p>
+                    </section>
+
+
+                    <section>
+                    
+                    <img src="img/char-idea.png" style="border:none; background:none; box-shadow:none;">
+                    
+                    <h2 class="fragment">DESEM LA INFORMACIÓ EN<br>
+                    ATRIBUTS
+                    </h2>
+                    </section>
+
+
+
+                    <section>
+    <pre><code class="html">&lt;!-- Llistat de llibres --&gt;
+&lt;a href="fitxa/it" class="llibre" id="it" rel="Stephen King"&gt;IT&lt;/a&gt;</code></pre>
+
+    <p><br></p>
+    <!--
+    <p class="fragment">Accedim a la informació amb JavaScript o jQuery</p>
+
+<pre class="fragment"><code class="javascript">// Per saber-ne l'autor
+var element = document.getElementById('it');
+element.getAttribute('rel');
+
+// jQuery
+$('#it').attr('rel');</code></pre>-->
+
+                        <p>
+                            <span class="fragment">Però necessito més dades! <br>
+                            <img src="img/char-gotit.png" class="fragment" style="border:none; background:none; box-shadow:none;"><br>
+                        </p>
+
+                    </section>
+
+
+
+
+                    <section>
+
+                        <p>M'inventaré atributs ...</p>
+
+                        <br>
+
+                        <pre class="fragment"><code class="html">&lt;a href="#" class="llibre" id="it" rel="Stephen King" 
+    isbn="435409504-34"
+    edicio="2"
+    categoria="Terror"
+    publicat="1998"
+    ....
+&gt;IT&lt;/a&gt;</code></pre>
+
+                    </section>
+
+
+                    <section>
+                        <h6>
+                            <br>
+                        </h6>
+                        <h2>PROBLEMES</h2>
+                        <div>
+                            <br>
+                        </div>
+
+                        <ul>
+                            <li class="fragment">Cada atribut té la seva funció, no s'han de fer servir atributs destinats a d'altres usos.<br>
+                            <br></li>
+                            <li class="fragment">No podem inventar atributs. No estaríem escrivint HTML vàlid</li>
+                        </ul>
+                    </section>
+
+
+                </section>
+
+                <section id="solucio">
+
+                    <h2>
+                        SOLUCIÓ?
+                    </h2>
+
+                    <img src="http://i.imgur.com/8Kmqc.jpg" class="fragment">
+
+                </section>
+
+
+
+
+                <section id="atributs-data-">
+                    <h2>atributs <font color="#ffff00">data-*</font></h2>
+                    <div>
+                        <br>
+                    </div>
+
+
+                    <ul>
+                        <li class="fragment">Podem ficar-li qualsevol nom<br>
+                        <br>
+                        </li>
+                        <li class="fragment">Ha de tenir com a mínim 1 caràcter <br>i estar en minúscula<br>
+                        <br>
+                        </li>
+                        <li class="fragment">El valor pot ser qualsevol string<br>
+                        <span class="fragment">(fins i tot pot estar en JSON!)</span>
+                        </li>
+                    </ul>
+
+
+                </section>
+
+                <section id="exemple">
+                    <h2>INVENTAR-SE ATRIBUTS</h2>
+                    <h2>NO ERA TANTA MALA IDEA</h2>
+
+                    <p>
+                    <br>
+                    </p>
+
+<pre class="fragment"><code class="html">&lt;a href="fitxa/it" id="it" class="llibre"
+    data-autor="Stephen King"
+    data-pagines="658"
+    data-titol="IT"
+    data-genere="Terror"
+    data-fitxa="{'autor':'Stephen King','naixement':'1968-02-01', 'isbn':'435409504-34', 'data_publicacio': '1980-03-01', ...}"
+ &gt;IT
+ &lt;/a&gt;</code></pre>
+
+                </section>
+
+                <section class="manipulacio">
+                    <h2>COM ACCEDIM<br>A LA INFORMACIÓ?</h2>
+                    <h2>
+                    <br>
+                    </h2>
+                    <h1>
+                        <font color="#ffff00" class="fragment">JavaScript</font>
+                    </h1>
+
+                </section>
+
+                <section id="dataset">
+
+                    <section>
+
+                        <p>element.dataset</p>
+
+<pre><code class="javascript" contenteditable>var llibre = document.querySelector('#it');
+var data   = llibre.dataset;
+// data.autor
+// data.pagines
+// data.titol ...
+</code></pre>
+
+                        <h2 class="fragment">suport dels navegadors</h2>
+
+                        <ul>
+                            <li class="fragment">Firefox 15+</li>
+                            <li class="fragment">Chrome 22+</li>
+                            <li class="fragment">Safari 5.1+</li>
+                            <li class="fragment">Opera 12.1+</li>
+                            <li class="fragment">Mòbil: iOs 5.0+ / Android 3.0+ / <br> BlackBerry 7+</li>
+                        </ul>
+
+                    </section>
+
+
+                    <section>
+                        <h3>... <span class="fragment">IE?</span></h3>
+                        <img src="img/disparar-ie.jpg" class="fragment" style="border:none; background:none; box-shadow:none;">
+                        <img src="img/lokura.jpg" class="fragment" style="border:none; background:none; box-shadow:none;">
+                        <p class="fragment">però tranquils ...</p>
+                    </section>
+
+
+
+                    <section>
+                        <h2>NO ESTÀ TOT PERDUT!</h2>
+
+                        <h5>
+                        <br>
+                        </h5>
+
+                        <h5 class="fragment">Mètode crossbrowser</h5>
+
+<pre class="fragment"><code class="javascript" contenteditable>// ja existia: mètode getAttribute i setAttribute
+var llibre = document.getElementById('it');
+// llibre.getAttribute('data-autor');
+// llibre.getAttribute('data-pagines');
+// llibre.getAttribute('data-titol'); ...
+
+// o amb jQuery! (a partir de v1.4.3)
+$('#it').data('autor');</code></pre>
+
+                    
+                        <aside class="notes">
+                            Tranquils!!!
+                        </aside>
+                    </section>
+
+                </section>
+
+                <section id="mes-coses">
+                    <h2>PODEM FER MÉS COSES?</h2>
+
+<pre class="fragment"><code class="html">&lt;a href="fitxa/it" id="it" class="llibre" data-autor="Stephen King" data-pagines="658" data-titol="IT" data-genere="Terror"&gt;IT&lt;/a&gt;</code></pre>
+
+<pre class="fragment"><code class="javascript">// modificar la informació dels atributs&nbsp;
+
+// html5
+data.autor = 'Nou valor';
+data['autor'] = 'Nou valor';
+
+// oldschool (crossbrowser)
+llibre.setAttribute('data-autor', 'Nou valor');
+
+
+// jQuery
+$('#it').data('autor','Nou valor');
+</code></pre>
+
+
+                </section>
+
+
+
+                <section id="avantatges">
+                    <h2>AVANTATGES</h2>
+
+                    <p>
+                    <br>
+                    </p>
+                    <ul>
+                        <li class="fragment">Podem processar fàcilment la informació<br>
+                        <br>
+                        </li>
+                        <li class="fragment">El codi és més amigable i vàlid<br>
+                        <br>
+                        </li>
+                        <li class="fragment">No afecta a la visual de la pàgina ni <br>de l'usuari final .&nbsp;(La informació es manté oculta)</li>
+                    </ul>
+
+
+                </section>
+
+
+
+                <section id="aplicacions">
+                    <h2>APLICACIONS</h2>
+
+                    <p>
+                    <br>
+                    </p>
+                    <p class="fragment">Qualsevol cosa que se us ocorri</p>
+
+                    <p>
+                    <br>
+                    </p>
+                    <p class="fragment">Algunes idees:</p>
+
+                    <ul>
+                        <li class="fragment">Jocs</li>
+                        <li class="fragment">Vídeos</li>
+                        <li class="fragment">Galeries de fotos</li>
+                        <li class="fragment">Cistelles de compra</li>
+                        <li class="fragment">...</li>
+                    </ul>
+
+                </section>
+
+
+
+                <section id="gracies">
+                    <h1>GRÀCIES!</h1>
+                    <div>
+                        <br>
+                        <h4 class="fragment">Preguntes?</h4>
+                    </div>
+                    <br>
+                    <div><small>Referències:</small></div>
+                        <ul class="fragment grow" style="list-style:none;">
+                            <li>
+                                <a href="http://www.w3.org/TR/2011/WD-html5-20110525/elements.html#custom-data-attribute" target="_blank">W3: Custom data attribute</a>
+                            </li>
+                            <li>
+                                <a href="http://html5doctor.com/html5-custom-data-attributes/" target="_blank">html5doctor</a>
+                            </li>
+                            <li>
+                                <a href="http://caniuse.com/dataset" target="_blank">Suport en els navegadors: CAN I USE? </a>
+                            </li>
+                            <li>
+                                <a href="http://html5please.com/" target="_blank">html5please</a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+        </div>
+		
+
+    </div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
