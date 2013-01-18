@@ -1,0 +1,72 @@
+<!--
+
+Crea  un  formulari  que  envii  les  següents  dades  a  l'adreça  de  correu  electrònic
+<elteunom>@insbaixcamp.cat:
+• Nom. La mida de la caixa serà de 10 píxels i la longitud màxima del text 15.
+• Cognoms. La mida de la caixa serà de 10 i la longitud màxima del text 25.
+• Telèfon. La mida de la caixa serà de 10 i la longitud màxima del text 9.
+• DNI. La mida de la caixa serà de 10, el seu text tindrà una longitud màxima de 9 i serà
+de tipus password.
+• Gènere. Tindrà dos botons de tipus radio per triar si l'usuari és home o dona. L'opció
+home apareixerà triada per defecte.
+• Foto. Permetrà triar i adjuntar una fotografia de l'usuari.
+• Suggeriments. Serà un camp de text amb 5 línies i 30 columnes.
+• Un  quadre  de  validació per  seleccionar  si  es desitja rebre  les novetats de  la web
+(activat per defecte).
+• Un desplegable en el que donin una qualificació a la web.
+• Un botó d'enviament d'informació.
+• Un botó d'esborrat.
+
+-->
+<!doctype html>
+<html lang="ca">
+	<head>
+        <meta charset="utf-8">
+
+		<title>Formulari</title>
+
+	</head>
+
+	<body>
+		<form method="post" action="mailto:didac.rios@insbaixcamp.cat" enctype="multipart/form-data">
+
+			<p><input type="text" name="nom" size="10" maxlength="15" placeholder="Nom"></p>
+			<p><input type="text" name="cognoms" size="10" maxlength="25" placeholder="Cognoms"></p>
+			<p><input type="number" name="telefon" size="10" maxlength="9" placeholder="Telefon"></p>
+			<p><input type="password" name="dni" size="10" maxlength="9" placeholder="DNI"></p>
+
+			<p>
+				<input type="radio" name="genere" id="genere_masc" value="home"> <label for="genere_masc">Home</label>
+				<input type="radio" name="genere" id="genere_fem" value="dona"> <label for="genere_fem">Dona</label>
+			</p>
+
+
+			<p>
+				<label for="foto">Foto: </label>
+				<input type="file" name="foto" id="foto">
+			</p>
+
+			<p>
+				<label for="suggeriments">Suggerimanets: </label>
+				<textarea rows="5" cols="30" name="suggeriments" id="suggeriments"></textarea>
+			</p>
+
+			<p>
+				<select name="qualificacio">
+					<option value="0">Qualifica la web</option>
+					<option value="1">Dolenta</option>
+					<option value="2">Bona</option>
+					<option value="3">Molt bona</option>
+				</select>
+			</p>
+
+			<p>
+				<input type="submit" name="enviar" id="enviar" value="Enviar formulari">
+				<input type="reset" name="reset" id="reset" value="Esborrar formulari">
+			</p>
+
+
+		</form>
+
+	</body>
+</html>
