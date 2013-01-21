@@ -1,0 +1,132 @@
+/*
+Afegeix-li estils a la pàgina a nivell global, a nivell taula, a nivell de files i a nivell de cel·les individuals.
+Indica diferents estils per a les diferents assignatures que tens.
+Utilitza propietats de: tipografia, text, taules, fons, caixa (border, margin, padding)
+
+Busca informació sobre les noves propietats CSS3 i afegeix almenys 3 en el teu disseny.
+
+Entrega un zip amb el codi i un document en processador de text que expliqui el codi que has creat.
+*/
+
+* {
+	/**
+	 * Definim per a tots els elements del document, la mida de la lletra
+	 */
+	font-size:30px;
+}
+
+
+table {
+	/**
+	 * Definim la familia principal, podem definir-ne moltes
+	 * Predomina la primera, si no la troba, passa a la següent
+	 */
+	font-family: 'Tahoma', 'Arial', sans-serif; 
+	/**
+	 * Marge superior i inferior definits 
+	 * Marge dret i esquerre auto per que quedi centrada
+	 */
+	margin: 80px auto; 
+
+	border: 1px solid #989898; /* mida tipus color del contorn */
+
+	/**
+	 * Contorns arrodonits CSS3, sintaxys per a cobrir la majoria de navegadors
+	 * -webkit bassats en webkit
+	 * -moz bassats en Gecko
+	 * i l'estandar normal
+	 *
+	 * En la majoria de "novetats" css3 cal fer fallbacks per a tos els dispositius
+	 */
+	-webkit-border-radius: 7px;
+	   -moz-border-radius: 7px;
+			border-radius: 7px;
+
+	/**
+	 *  Ombra a l'element CSS3
+	 *  px desplaçament de l'eix x
+	 *  px desplaçament de l'eix y
+	 *  px difuminat
+	 *  color  
+	 */
+
+	 -webkit-box-shadow: 0px 0px 15px gray;
+		-moz-box-shadow: 0px 0px 15px gray;
+			 box-shadow: 0px 0px 15px gray;
+}
+
+table caption {
+	/**
+	 * Ocultem l'element caption de la taula, per a que quedi visualment més atractiva
+	 * 
+	 */
+	display: none;
+}
+
+table th, td {
+	/**
+	 * Centrem el texts de les cel·les de la taula
+	 */
+	text-align: center;
+}
+
+table > tbody td {
+	/* Definim una farciment a les cel·les del cos de la taula  de 6px per cada costat*/
+	padding: 6px;
+	/* el color de fons*/
+	background: #B9B9B9;
+}
+
+table tr td:nth-child(1) {
+	/**
+	 * Aplicarem els estil a la primera columna (td) de cada fila
+	 * Correspondrà a les hores de les assignatures
+	 */
+
+	color:white; /* Color de la lletra */
+
+	/**
+	 * Colors de fons degradats CSS3
+	 */
+	background: #1e5799; /* per als que no soportin degradats*/
+
+	background: -moz-linear-gradient(top, #1e5799 0%, #7db9e8 100%); /* firefox antics */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1e5799), color-stop(100%,#7db9e8)); /* chrome i safaris antics */
+	background: -webkit-linear-gradient(top, #1e5799 0%,#7db9e8 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #1e5799 0%,#7db9e8 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #1e5799 0%,#7db9e8 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #1e5799 0%,#7db9e8 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-8 */
+
+}
+
+
+table > thead th {
+	/**
+	 * Apliquem els estils només a les capçaleres de la taula
+	 * "Negreta" *  i 5 px de farciment
+	 * 
+	 */
+	font-weight: bold;
+	padding:5px;
+}
+
+/**
+ * Definirem un color de fons per a cada assignatura
+ */
+
+.m1 {
+	background-color: orange;
+}
+
+.m2 {
+	background-color: green;
+}
+
+.m3 {
+	background-color: red;
+}
+
+.m4 { 
+	background-color: yellow;
+}
